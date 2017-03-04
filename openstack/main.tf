@@ -37,6 +37,5 @@ module "node" {
   network_name = "${module.network.network_name}"
   secgroup_name = "${module.network.secgroup_name}"
   floating_ip_pool = "${var.floating_ip_pool}"
-  master_ip = "${module.master.ip_address}"
   count = "${var.node_count}"
 }
