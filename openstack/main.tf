@@ -7,7 +7,7 @@ variable floating_ip_pool {}
 
 # Nodes settings
 variable base_image {}
-variable node_count { default = "2" }
+variable node_count { default = "3" }
 variable node_flavor {}
 variable node_flavor_id { default = "" }
 
