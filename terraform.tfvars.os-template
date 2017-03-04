@@ -1,0 +1,16 @@
+# Terraform variables, uncomment properties to change defaults
+
+# Cluster settings
+
+# cluster_prefix="3"
+# ssh_key="~/.ssh/id_rsa.pub"
+external_network_uuid=""
+# dns_nameservers="8.8.8.8,8.8.4.4"
+floating_ip_pool=""
+
+# Nodes settings
+
+base_image=""
+# node_count="3"
+node_flavor=""
+# node_flavor_id = "" # not mandatory
