@@ -10,7 +10,7 @@ floating_ip_pool=""
 
 # Nodes settings
 
-base_image=""
+# base_image="openshift-base"
 # node_count="3"
 node_flavor=""
 # node_flavor_id = "" # not mandatory

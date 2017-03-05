@@ -1,0 +1,7 @@
+{
+  "image_name": "openshift-base",
+  "source_image_name": "CentOS 7",
+  "network": "your-private-network-id",
+  "flavor": "your-packer-flavor-name",
+  "floating_ip_pool": "your-pool-name"
+}

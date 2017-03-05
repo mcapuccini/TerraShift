@@ -1,0 +1,28 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Install required packages
+      yum: name={{ item }} state=present
+      with_items:
+        - wget
+        - git
+        - net-tools
+        - bind-utils
+        - iptables-services
+        - bridge-utils
+        - bash-completion
+        - docker
+    - name: Update all yum packages
+      yum: name=* state=latest
+    - name: Setup Docker to trust any registry on 172.30.0.0/16
+      lineinfile:
+        dest: /etc/sysconfig/docker
+        line: "OPTIONS=--selinux-enabled --insecure-registry 172.30.0.0/16"
+        regexp: "^#?OPTIONS"
+        state: present
+    - name: Start docker
+      service:
+        name: docker
+        enabled: yes
+        state: restarted

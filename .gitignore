@@ -4,3 +4,4 @@
 **/.terraform
 **/inventory
 **/*.retry
+**/packer-conf.json

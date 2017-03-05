@@ -6,7 +6,7 @@ variable dns_nameservers { default="8.8.8.8,8.8.4.4" }
 variable floating_ip_pool {}
 
 # Nodes settings
-variable base_image {}
+variable base_image { default = "openshift-base" }
 variable node_count { default = "3" }
 variable node_flavor {}
 variable node_flavor_id { default = "" }
