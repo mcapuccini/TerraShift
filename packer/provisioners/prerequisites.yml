@@ -13,6 +13,7 @@
         - bridge-utils
         - bash-completion
         - docker
+        - NetworkManager
     - name: Update all yum packages
       yum: name=* state=latest
     - name: Setup Docker to trust any registry on 172.30.0.0/16
@@ -21,8 +22,13 @@
         line: "OPTIONS=--selinux-enabled --insecure-registry 172.30.0.0/16"
         regexp: "^#?OPTIONS"
         state: present
-    - name: Start docker
+    - name: Restart docker
       service:
         name: docker
         enabled: yes
         state: restarted
+    - name: Start NetworkManager
+      service:
+        name: NetworkManager
+        enabled: yes
+        state: started
